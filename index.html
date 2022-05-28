@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+      <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>IntoTheFray-Trips</title>
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+  
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+  
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
+</head>
+
+<body class="debu">
+  <header>
+    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+      <a class="navbar-brand ms-3" href="#">
+        
+        <span class="ms-2">🎖️ <b> Into The Fray Trips</b></span>
+      </a>
+    </nav>
+  </header>
+  <main>
+    
+    
+    <div class="container">
+
+      <!--Trips Go Here-->
+
+          <div id="trips">
+            <!-- <div class="col-12  border shadow rounded p-2 justify-content-center">
+              <h2>Trips</h2>
+              <div class="row">
+              <div class="col-1">
+                <h4>Type</h4>
+              </div>
+                <div class="col-2">
+                  <h4>Name</h4>
+                  </div>
+                  <div class="col-3">
+                    <h4>Confirmation Number</h4>
+                  </div>
+                    <div class="col-3">
+                      <h4>Address</h4>
+                      </div>
+                      <div class="col-2">
+                        <h4>Date</h4>
+                        </div>
+                        <div class="col-1">
+                          <h4>Cost</h4>
+                          </div>
+                        </div>
+                          
+                                      
+                                    </div>                               -->
+                                    </div>
+                                    
+                                      <div class="row" id="reservations-form">
+                                      <form class="row item-form">
+                                        <div class="col-1">
+                                          <div class="dropdown">
+                                            <a class="m-0 p-0 btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                              Type
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                              <li><a class="dropdown-item" href="#">🚁</a></li>
+                                              <li><a class="dropdown-item" href="#">⛵</a></li>
+                                              <li><a class="dropdown-item" href="#">🚙</a></li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                        <div class="col-2 input-group mb-3 p-0 m-0" id="">
+                                          <input required type="text" class="bg-light" placeholder="Name" aria-label="Name" aria-describedby="">
+                                        </div>
+                                        <div class="col-3 input-group mb-3 p-0 m-0" id="">
+                                          <input required type="text" class="bg-light" placeholder="Confirmation No." aria-label="Confirmation No." aria-describedby="">
+                                        </div>
+                                        <div class="col-3 input-group mb-3 p-0 m-0" id="">
+                                          <input required type="text" class="bg-light" placeholder="Address" aria-label="Address" aria-describedby="">
+                                        </div>
+                                        <div class="col-2 input-group mb-3 p-0 m-0" id="">
+                                          <input required type="date" class="bg-light" placeholder="Date" aria-label="Date" aria-describedby="">
+                                        </div>
+                                        <div class="col-1 input-group mb-3 p-0 m-0" id="">
+                                          <input required type="number" class="bg-light" min="0" placeholder="Cost" aria-label="Cost" aria-describedby="">
+                                        </div>
+                                        <div class="d-flex justify-content-end mb-2">
+
+                                          <button class="btn btn-dark">Reserve</button>
+                                        </div>
+                                      </form>
+                                      </div>
+                                      </div>
+                                                                
+                                  
+                                </main>
+  <footer class="bg-dark text-light">
+    <div class="text-center no-select">
+      <p><small>Made with 💖 by Codeworks</small></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
