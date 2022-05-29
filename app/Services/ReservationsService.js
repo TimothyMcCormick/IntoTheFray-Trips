@@ -1,11 +1,14 @@
 import { ProxyState } from "../AppState.js";
+import { Reservation } from "../Models/Reservation.js";
 
 
 
 
 class ReservationsService{
-  constructor(){
-    console.log('reservations service loaded');
+  addReservation(reservationData){
+    console.log('add reservation service', reservationData);
+    ProxyState.reservations = [...ProxyState.reservations, new Reservation(reservationData)]
+    
   }
 }
 

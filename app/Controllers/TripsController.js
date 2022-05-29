@@ -14,6 +14,8 @@ function _drawTrips(){
 export class TripsController{
   constructor(){
     console.log('Trips Controller Loaded');
+    ProxyState.on('trips', _drawTrips)
+    ProxyState.on('reservations', _drawTrips)
     _drawTrips()
   }
 }

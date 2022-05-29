@@ -6,6 +6,8 @@ import { generateId } from "../Utils/generateId.js"
 export class Reservation{
   constructor(reservationData){
     this.id = reservationData.id || generateId()
+    this.tripId = reservationData.tripId
+    console.log(this.tripId);
     this.type = reservationData.type
     this.name = reservationData.name
     this.confirmationNo = reservationData.confirmationNo

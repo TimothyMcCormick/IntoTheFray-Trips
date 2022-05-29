@@ -1,10 +1,12 @@
 import { ProxyState } from "../AppState.js";
+import { Reservation } from "../Models/Reservation.js";
 import { Trip } from "../Models/Trip.js";
 
 
 class TripsService{
   constructor(){
-    console.log('hello from the service');
+    console.log('trips service loaded');
+    
   }
 }
 
