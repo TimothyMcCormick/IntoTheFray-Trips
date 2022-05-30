@@ -16,7 +16,7 @@ export class Trip{
 get Template(){
   return `
   <div class="col-12  border shadow rounded p-2 m-2 bg-dark text-light">
-              <h2>${this.title}</h2>
+              <span class="d-flex justify-content-between"><h2>${this.title}</h2><i onclick="app.tripsController.deleteTrip('${this.id}')" class="px-3 selectable mdi mdi-delete"></i></span>
               <div class="row">
               <div class="col-1">
                 <h4>Type</h4>
@@ -39,7 +39,31 @@ get Template(){
 
                         ${this.Reservations}
 
+                        
+
                         </div>
+                        <form class="reservations-form p-0" onsubmit="app.reservationsController.addReservation('${this.id}')">
+                                        
+                                        <div class="col-12 d-flex justify-content-between">
+                                        <select required name="type" id="type">
+                                          <option value="🚁">🚁</option>
+                                          <option value="⛵">⛵</option>
+                                          <option value="🚙">🚙</option>
+                                        </select>
+                                      
+                                        <input required type="text" max="50" min="15" name="name" id="name" placeholder="Name" >
+                                        <input required type="text" max="10" min="5" name="confirmationNo" id="confirmationNo" placeholder="Confirmation No.">
+                                        <input required type="text" name="address" id="address" placeholder="Address">
+                                        <input required type="date" name="date" id="date" placeholder="Date">
+                                        <input required type="number" name="cost" id="cost" placeholder="Cost">
+                                      </div>
+                                        <div class="col-12 d-flex justify-content-end">
+
+                                          <button class="btn btn-dark m-2" title="add reservation">Reserve</button>
+                                        </div>
+                                      </form>
+                                      </div>
+                                      
   </div>
   `
 }

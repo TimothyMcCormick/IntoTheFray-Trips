@@ -4,16 +4,16 @@ import { generateId } from "../Utils/generateId.js"
 
 
 export class Reservation{
-  constructor(reservationData){
-    this.id = reservationData.id || generateId()
-    this.tripId = reservationData.tripId
+  constructor(data){
+    this.id = data.id || generateId()
+    this.tripId = data.tripId
     console.log(this.tripId);
-    this.type = reservationData.type
-    this.name = reservationData.name
-    this.confirmationNo = reservationData.confirmationNo
-    this.address = reservationData.address
-    this.date = reservationData.date
-    this.cost = reservationData.cost
+    this.type = data.type
+    this.name = data.name
+    this.confirmationNo = data.confirmationNo
+    this.address = data.address
+    this.date = data.date
+    this.cost = data.cost
   }
 
 
@@ -39,8 +39,9 @@ export class Reservation{
             <h5>${this.date}</h5>
             </div>
             <div class="col-1">
-              <h5>${this.cost}</h5>
+              <span class="d-flex justify-content-between"><h5>${this.cost}</h5><i onclick="app.reservationsController.deleteReservation('${this.id}')" class="selectable mdi mdi-delete"></i></span>
               </div>
+              
             </div>
             </div>
     `

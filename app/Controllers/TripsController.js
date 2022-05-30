@@ -1,5 +1,6 @@
 import { ProxyState } from "../AppState.js";
 import { tripsService } from "../Services/TripsService.js"
+import { loadState, saveState } from "../Utils/LocalStorage.js";
 
 
 
@@ -16,6 +17,9 @@ export class TripsController{
     console.log('Trips Controller Loaded',);
     ProxyState.on('trips', _drawTrips)
     ProxyState.on('reservations', _drawTrips)
+    ProxyState.on('trips', saveState)
+    ProxyState.on('reservations', saveState)
+    loadState()
     _drawTrips()
   }
 
@@ -29,5 +33,9 @@ export class TripsController{
     }
     console.log('trip data', tripData);
     tripsService.createTrip(tripData)
+  }
+
+  deleteTrip(id){
+    tripsService.deleteTrip(id)
   }
 }
