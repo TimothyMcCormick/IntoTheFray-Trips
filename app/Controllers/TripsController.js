@@ -34,6 +34,13 @@ export class TripsController{
     tripsService.createTrip(tripData)
   }
 
+  updateTrip(id){
+    let textarea = window.event.target
+    console.log(textarea.value, id);
+    tripsService.updateTrip(textarea.value, id)
+    Pop.toast('Trip Updated!')
+  }
+
   async deleteTrip(id){
     if(await Pop.confirm('Are you sure?')){
       tripsService.deleteTrip(id)

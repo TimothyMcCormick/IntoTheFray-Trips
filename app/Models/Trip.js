@@ -8,6 +8,7 @@ export class Trip{
   constructor(tripData){
     this.id = tripData.id || generateId(),
     this.title = tripData.title
+    this.notes = tripData.notes
   }
 
 
@@ -61,6 +62,7 @@ get Template(){
                                           <button class="btn btn-dark m-2" title="add reservation">Reserve</button>
                                         </div>
                                       </form>
+                                      <textarea onblur="app.tripsController.updateTrip('${this.id}')" class="border-0">${this.notes}</textarea>
                                       
                                       
   
