@@ -7,7 +7,6 @@ import { generateId } from "../Utils/generateId.js"
 export class Trip{
   constructor(tripData){
     this.id = tripData.id || generateId(),
-    console.log(this.id);
     this.title = tripData.title
   }
 
@@ -39,12 +38,12 @@ get Template(){
 
                         ${this.Reservations}
 
-                        
-
                         </div>
-                        <form class="reservations-form p-0" onsubmit="app.reservationsController.addReservation('${this.id}')">
+                        </div>
+                        </div>
+                        <form class="p-0" onsubmit="app.reservationsController.addReservation('${this.id}')">
                                         
-                                        <div class="col-12 d-flex justify-content-between">
+                                        <div class="col-12 d-flex justify-content-around">
                                         <select required name="type" id="type">
                                           <option value="🚁">🚁</option>
                                           <option value="⛵">⛵</option>
@@ -62,15 +61,15 @@ get Template(){
                                           <button class="btn btn-dark m-2" title="add reservation">Reserve</button>
                                         </div>
                                       </form>
-                                      </div>
                                       
-  </div>
+                                      
+  
   `
 }
 
 
 get Reservations(){
-  let reservations = ProxyState.reservations
+  let reservations = ProxyState.reservations.filter(r => r.tripId == this.id)
   let template = ''
   reservations.forEach(r => template += r.Template)
   return template

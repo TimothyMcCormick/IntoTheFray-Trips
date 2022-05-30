@@ -1,11 +1,13 @@
 import { ProxyState } from "../AppState.js";
 import { tripsService } from "../Services/TripsService.js"
 import { loadState, saveState } from "../Utils/LocalStorage.js";
+import { Pop } from "../Utils/Pop.js";
 
 
 
 function _drawTrips(){
   let trips = ProxyState.trips
+  ProxyState.reservations.sort((a,b)=> a.date - b.date)
   let template = ''
   trips.forEach(t => template += t.Template)
   document.getElementById('trips').innerHTML = template
@@ -14,7 +16,6 @@ function _drawTrips(){
 
 export class TripsController{
   constructor(){
-    console.log('Trips Controller Loaded',);
     ProxyState.on('trips', _drawTrips)
     ProxyState.on('reservations', _drawTrips)
     ProxyState.on('trips', saveState)
@@ -26,16 +27,16 @@ export class TripsController{
 
   createTrip(){
     window.event.preventDefault()
-    console.log('creating trip');
     let form = window.event.target
     let tripData = {
       title: form.title.value,
     }
-    console.log('trip data', tripData);
     tripsService.createTrip(tripData)
   }
 
-  deleteTrip(id){
-    tripsService.deleteTrip(id)
+  async deleteTrip(id){
+    if(await Pop.confirm('Are you sure?')){
+      tripsService.deleteTrip(id)
+    }
   }
 }

@@ -6,12 +6,10 @@ import { Reservation } from "../Models/Reservation.js";
 
 class ReservationsService{
   addReservation(reservationData){
-    console.log('add reservation service', reservationData);
     ProxyState.reservations = [...ProxyState.reservations, new Reservation(reservationData)]
   }
 
   deleteReservation(id){
-    console.log('delete reservation', id);
     ProxyState.reservations = ProxyState.reservations.filter(r => r.id != id)
   }
 }
