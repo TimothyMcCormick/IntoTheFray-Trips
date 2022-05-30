@@ -131,10 +131,19 @@
                                       </div>
                                         <div class="col-12 d-flex justify-content-end">
 
-                                          <button class="btn btn-dark" title="add reservation">Reserve</button>
+                                          <button class="btn btn-dark m-2" title="add reservation">Reserve</button>
                                         </div>
                                       </form>
                                       </div>
+                                      <form onsubmit="app.tripsController.createTrip('${this.id}')">
+                                        <div class="row justify-content-center">
+                                        <div class="col-3 border shadow p-2 m-2 text-center bg-light">
+                                          <h2>Create Trip</h2>
+                                          <input class="m-2" required type="text" max="15" min="3" name="title" id="title" placeholder="Title">
+                                          <span><button class="btn btn-primary m-2">Ok</button><button class="btn btn-secondary m-2">Cancel</button></span>
+                                        </div>
+                                      </div>
+                                      </form>
                                       </div>
                                                                 
                                   

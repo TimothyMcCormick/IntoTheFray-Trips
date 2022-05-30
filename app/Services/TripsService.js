@@ -4,11 +4,13 @@ import { Trip } from "../Models/Trip.js";
 
 
 class TripsService{
-  constructor(){
-    console.log('trips service loaded');
+  createTrip(tripData){
+    console.log('creating trip', tripData);
+    ProxyState.trips = [...ProxyState.trips, new Trip(tripData)]
+  }
     
   }
-}
+
 
 
 export const tripsService = new TripsService()

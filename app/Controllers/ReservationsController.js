@@ -7,7 +7,7 @@ import { reservationsService } from "../Services/ReservationsService.js"
 
 export class ReservationsController{
   constructor(){
-
+    
     console.log('reservations controller loaded');
     
   }
@@ -27,5 +27,6 @@ export class ReservationsController{
     }
     console.log(reservationData);
     reservationsService.addReservation(reservationData)
+    
   }
 }

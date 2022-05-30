@@ -8,7 +8,7 @@ export class Trip{
   constructor(tripData){
     this.id = tripData.id || generateId(),
     console.log(this.id);
-    this.name = tripData.name
+    this.title = tripData.title
   }
 
 
@@ -16,7 +16,7 @@ export class Trip{
 get Template(){
   return `
   <div class="col-12  border shadow rounded p-2 m-2 bg-dark text-light">
-              <h2>${this.name}</h2>
+              <h2>${this.title}</h2>
               <div class="row">
               <div class="col-1">
                 <h4>Type</h4>

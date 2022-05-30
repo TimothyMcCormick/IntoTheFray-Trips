@@ -10,7 +10,7 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Trip').Trip[]} */
 
   trips = [
-    new Trip ({name: "General Tripp's Adventure to the Nether-realm"}),
+    new Trip ({title: "General Tripp's Adventure to the Nether-realm"}),
   
   ]
 
@@ -19,8 +19,9 @@ class AppState extends EventEmitter {
 
     reservations = [
       new Reservation ({type: '🚁', name: 'HeliPad Flights', confirmationNo: 'g9h758', address: '521 Peaches St', date: '06-20-22', cost: 500}),
-      
     ]
+
+    
 }
 
 export const ProxyState = new Proxy(new AppState(), {

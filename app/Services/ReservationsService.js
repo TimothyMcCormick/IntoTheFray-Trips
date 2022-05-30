@@ -8,7 +8,6 @@ class ReservationsService{
   addReservation(reservationData){
     console.log('add reservation service', reservationData);
     ProxyState.reservations = [...ProxyState.reservations, new Reservation(reservationData)]
-    
   }
 }
 
