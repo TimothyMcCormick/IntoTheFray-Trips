@@ -20,7 +20,7 @@ export class Reservation{
 
   get Template(){
     return`
-    <div class="col-md-12 border shadow rounded p-2 m-2 bg-light text-dark">
+    <div class="border shadow rounded p-2 m-2 bg-light text-dark">
   <div class="row">
   <div class="col-1">
     <h5>${this.type}</h5>

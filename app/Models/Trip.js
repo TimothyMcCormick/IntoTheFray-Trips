@@ -15,8 +15,8 @@ export class Trip{
 
 get Template(){
   return `
-  <div class="col-12  border shadow rounded p-2 m-2 bg-dark text-light">
-              <span class="d-flex justify-content-between"><h2>${this.title}</h2><i onclick="app.tripsController.deleteTrip('${this.id}')" class="px-3 selectable mdi mdi-delete"></i></span>
+  <div class="row border shadow rounded p-2 m-2 bg-dark text-light">
+              <span class="d-flex justify-content-between"><h2>${this.title}</h2><i onclick="app.tripsController.deleteTrip('${this.id}')" class="px-2 selectable mdi mdi-delete"></i></span>
               <div class="row">
               <div class="col-1">
                 <h4>Type</h4>
@@ -40,8 +40,7 @@ get Template(){
                         ${this.Reservations}
 
                         </div>
-                        </div>
-                        </div>
+                        
                         <form class="p-0" onsubmit="app.reservationsController.addReservation('${this.id}')">
                                         
                                         <div class="col-12 d-flex justify-content-around">
@@ -59,18 +58,19 @@ get Template(){
                                       </div>
                                         <div class="col-12 d-flex justify-content-end">
 
-                                          <button class="btn btn-dark m-2" title="add reservation">Reserve</button>
+                                          <button class="btn btn-light text-dark m-2" title="add reservation">Reserve</button>
                                         </div>
                                       </form>
                                       <div class="row">
                                         <div class="col-md-4">
                                           <h5>Notes</h5>
-                                            <textarea onblur="app.tripsController.updateTrip('${this.id}')" class="border-0">${this.notes}</textarea>
+                                            <textarea cols="50" onblur="app.tripsController.updateTrip('${this.id}')" class="border-0">${this.notes}</textarea>
                                         </div>
                                       </div>
                                       <h3 class="text-end">Total : $${this.Total}</h3>
                                       
-                                      
+                                      </div>
+                        </div>
   
   `
 }
