@@ -62,7 +62,13 @@ get Template(){
                                           <button class="btn btn-dark m-2" title="add reservation">Reserve</button>
                                         </div>
                                       </form>
-                                      <textarea onblur="app.tripsController.updateTrip('${this.id}')" class="border-0">${this.notes}</textarea>
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <h5>Notes</h5>
+                                            <textarea onblur="app.tripsController.updateTrip('${this.id}')" class="border-0">${this.notes}</textarea>
+                                        </div>
+                                      </div>
+                                      <h3 class="text-end">Total : $${this.Total}</h3>
                                       
                                       
   
@@ -75,5 +81,12 @@ get Reservations(){
   let template = ''
   reservations.forEach(r => template += r.Template)
   return template
+}
+
+get Total(){
+  let reservations = ProxyState.reservations.filter(t => t.tripId == this.id)
+  let subTotal = 0
+  reservations.forEach(t => subTotal += parseInt(t.cost))
+  return subTotal
 }
 }
